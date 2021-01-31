@@ -3,7 +3,6 @@ var connection = require("./connection.js");
 
 function printQuestionMarks(num) {
 	var arr = [];
-
 	for (var i = 0; i < num; i++) {
 		arr.push("?");
 	}
@@ -36,8 +35,16 @@ var orm = {
 			cb(result);
 		});
 	},
-	updateOne: function () {
+	updateOne: function (table, objColVals, condition, cb) {
 		// Add update one code here
+		var queryString = "UPDATE " + table + " SET " + objToSql(objColVals);
+		queryString += " WHERE " + condition;
+
+		console.log(quertString);
+		connection.query(queryString, function (err, result) {
+			if (err) throw err;
+			cb(result);
+		})
 	}
 };
 

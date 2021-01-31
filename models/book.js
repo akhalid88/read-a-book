@@ -11,8 +11,10 @@ var book = {
 			cb(res);
 		});
 	},
-	update: function () {
-		orm.updateOne();
+	update: function (objColVals, condition, cb) {
+		orm.updateOne("books", objColVals, condition, function(res){
+			cb(res);
+		});
 	}
 };
 

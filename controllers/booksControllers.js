@@ -23,13 +23,25 @@ router.post("/api/books", function (req, res) {
 	], [
 		req.body.book_name, req.body.devoured
 	], function (result) {
-		console.log({ id: result.insertId })
 		res.json({ id: result.insertId });
 	});
 });
 
 router.put("/api/books/:id", function (req, res) {
 	// Add code here
+	var condition = "id = " + req.params.id;
+
+	console.log("condition", condition);
+
+	book.update({
+		devoured: req.body.devoured
+	}, condition, function (result) {
+		if (result.changedRows == 0) {
+			return res.status(404).end();
+		} else {
+			res.status(200).end();
+		}
+	});
 });
 
 // Export routes
