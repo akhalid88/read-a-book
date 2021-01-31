@@ -1,0 +1,26 @@
+<h1>Books</h1>
+
+<h2>Books to read!</h2>
+
+<ul>
+	{{#each books}}
+		{{#unless devoured}}
+			{{> books/book-block devoured=true}}
+		{{/unless}}
+	{{/each}}
+</ul>
+
+<h2>Books that have been read!</h2>
+
+<ul>
+	{{#each books}}
+		{{#if devoured}}
+			{{> books/book-block devoured=false}}
+		{{/if}}
+	{{/each}}
+</ul>
+
+<h2>Add a Book</h2>
+<form>
+	{{!-- create form content herre --}}
+</form>
