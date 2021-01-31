@@ -33,6 +33,7 @@ router.put("/api/books/:id", function (req, res) {
 
 	console.log("condition", condition);
 
+	console.log(req.body);
 	book.update({
 		devoured: req.body.devoured
 	}, condition, function (result) {
