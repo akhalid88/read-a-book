@@ -9,6 +9,21 @@ function printQuestionMarks(num) {
 	return arr.toString();
 }
 
+function objToSql(obj) {
+	var arr = [];
+
+	for (var key in obj) {
+		var value = obj[key];
+		if (Object.hasOwnProperty.call(obj, key)) {
+			if (typeof value === "string" && value.indexOf(" ") >= 0) {
+				value = "'" + value + "'";
+			}
+			arr.push(key + "=" + value);
+		}
+	}
+	return arr.toString();
+}
+
 //ORM Object
 var orm = {
 	selectAll: function (tableInput, cb) {
@@ -37,10 +52,13 @@ var orm = {
 	},
 	updateOne: function (table, objColVals, condition, cb) {
 		// Add update one code here
-		var queryString = "UPDATE " + table + " SET " + objToSql(objColVals);
-		queryString += " WHERE " + condition;
+		var queryString = "UPDATE " + table;
+		queryString += " SET ";
+		queryString += objToSql(objColVals);
+		queryString += " WHERE ";
+		queryString += condition;
 
-		console.log(quertString);
+		console.log(queryString);
 		connection.query(queryString, function (err, result) {
 			if (err) throw err;
 			cb(result);

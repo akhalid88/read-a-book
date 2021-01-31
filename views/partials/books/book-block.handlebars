@@ -1,4 +1,9 @@
 <li>
 	{{book_name}}
 	{{!-- Add button html element here --}}
+
+	<button class="change-read" data-id="{{id}}" data-newread="{{devour}}">
+		{{#if devour}}GOOD JOB NERD!{{else}}KEEP READING!{{/if}}
+	</button>
+
 </li>
