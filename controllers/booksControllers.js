@@ -18,6 +18,14 @@ router.get("/", function (req, res) {
 
 router.post("/api/books", function (req, res) {
 	// Add code here
+	book.create([
+		"book_name", "devoured"
+	], [
+		req.body.book_name, req.body.devoured
+	], function (result) {
+		console.log({ id: result.insertId })
+		res.json({ id: result.insertId });
+	});
 });
 
 router.put("/api/books/:id", function (req, res) {
