@@ -1,9 +1,12 @@
-<li>
-	{{book_name}}
-	{{!-- Add button html element here --}}
+<li class="justify-content">
+	<div class="justify-content">
 
-	<button class="change-read" data-id="{{id}}" data-newread="{{devour}}">
+		{{book_name}}
+		{{!-- Add button html element here --}}
+	
+	<button class="change-read justify-content is-family-monospace" data-id="{{id}}" data-newread="{{devour}}">
 		{{#if devour}}GOOD JOB NERD!{{else}}PUT IT BACK!{{/if}}
 	</button>
+</div>
 
 </li>
