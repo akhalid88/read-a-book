@@ -1,5 +1,5 @@
 # Read a Book Ya Nerd!  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
-This readme has been procedurally generated 
+##### This readme has been procedurally generated 
 
 -----------------------
 ## Table of Contents
@@ -23,7 +23,7 @@ https://read-a-book-ya-nerd.herokuapp.com/
 
 -----------------------
 ## Installation
-To install dependencies run the following command:
+To install locally, download repo and install dependencies using the following command:
 ```
 npm install
 ```
@@ -35,11 +35,14 @@ To use this repo you will need a working knowledge of Javascript and Node.
 To run this tool use the following command. This will generate a markdown file in the root folder with the name of 'READMETOO.md
 
 ```
-node index.js
+node server.js
 ```
 -----------------------
 ## Code snippets
 
+```
+
+```
 -----------------------
 ## Licenses
 This project uses a [MIT License](https://opensource.org/licenses/MIT). 
@@ -57,7 +60,7 @@ NA
 
 -----------------------
 ## Questions
-Created by akhalid88
+Created by Muhammad A Khalid
 
 If you have any questions you can reach me at the following email: [akhalid.code@gmail.com](mailto:akhalid.code@gmail.com)
 

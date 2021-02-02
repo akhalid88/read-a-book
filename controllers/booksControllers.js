@@ -1,12 +1,11 @@
+//Import express module
 var express = require('express');
-
 var router = express.Router();
 
 // Import book model
 var book = require("../models/book.js");
 
 router.get("/", function (req, res) {
-	// Add code here
 	book.all(function (data) {
 		var hbsObject = {
 			books: data
@@ -17,7 +16,6 @@ router.get("/", function (req, res) {
 });
 
 router.post("/api/books", function (req, res) {
-	// Add code here
 	book.create([
 		"book_name", "devoured"
 	], [
@@ -28,12 +26,8 @@ router.post("/api/books", function (req, res) {
 });
 
 router.put("/api/books/:id", function (req, res) {
-	// Add code here
 	var condition = "id = " + req.params.id;
 
-	console.log("condition", condition);
-
-	console.log(req.body);
 	book.update({
 		devoured: req.body.devoured
 	}, condition, function (result) {
