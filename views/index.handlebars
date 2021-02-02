@@ -22,13 +22,13 @@
 
 	<section class="container">
 		<div>
-			<h1 class="title has-text-centered mt-4">Super Book Logger Deluxe Ultra Giga Version 3.0</h1>
+			<h1 class="title has-text-centered mt-4">Super Book Logger Deluxe Ultra Giga Version 1.0</h1>
 			<div class="tile is-ancestor">
 
 
 				<div class="tile is-parent">
 					<div class="tile is-child notification is-danger">
-						<h2 class="title">Books to read!</h2>
+						<h2 class="title">Unread Books!</h2>
 						<ul>
 							{{#each books}}
 							{{#unless devoured}}
@@ -41,7 +41,7 @@
 				</div>
 				<div class="tile is-parent">
 					<div class="tile is-child notification is-success">
-						<h2 class="title">Books that have been read!</h2>
+						<h2 class="title">Read Books!</h2>
 						<ul>
 							{{#each books}}
 							{{#if devoured}}

@@ -1,6 +1,8 @@
 # Read a Book Ya Nerd!  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 ##### This readme has been procedurally generated 
 
+![Main](readme/main.png)
+
 -----------------------
 ## Table of Contents
 1. [Description](#description)
@@ -32,7 +34,7 @@ npm install
 ## Usage
 To use this repo you will need a working knowledge of Javascript and Node. 
 
-To run this tool use the following command. This will generate a markdown file in the root folder with the name of 'READMETOO.md
+To run this tool use the following command. This will generate a markdown file in the root folder with the name of 'READMETOO.md'
 
 ```
 node server.js
@@ -40,9 +42,31 @@ node server.js
 -----------------------
 ## Code snippets
 
+This project highlights the use of the Model-View-Controller or MVC framework. The idea is to separate the code into 3 main sections as per the name of the framework. The server side handles the model and the controller parts of the framework.
+
+As yuou can see in the picture, the controller handles the routing of the paths. It then calls the model via 'book.all' in the example below which in turn calls the orm parent class handing the all the relevant field data so taht the ORM can run the MySQL query and return the data. 
+
+![All](readme/viewAll.png)
+
+The View part of the framework is handled by the client side javascript and html/css. As seen in the code snippet below, when clicking on the button associated with '.create-form', the client grabs the the book name and the status of the book from the webpage and passes it along in the ajax call to the controller. 
+
+```javascript
+$(".create-form").on("submit", function (event) {
+	event.preventDefault();
+	var newBook = {
+		book_name: $("#bo").val().trim(),
+		devoured: $("[name=devoured]:checked").val().trim()
+	};
+	$.ajax("/api/books", {
+		type: "POST",
+		data: newBook
+	}).then(function () {
+		console.log("created new book");
+		location.reload();
+	});
+});
 ```
 
-```
 -----------------------
 ## Licenses
 This project uses a [MIT License](https://opensource.org/licenses/MIT). 
@@ -54,7 +78,7 @@ If you would like to contribute, you will need to know Javascript, Node JS, mySQ
 -----------------------
 ## Tests
 To run tests run the following command:
-```
+```javascript
 NA
 ```
 
